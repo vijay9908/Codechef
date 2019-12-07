@@ -3,6 +3,7 @@ for _ in range(t):
     n , m , q = map(int,input().split())
     #a = np.zeros([n,m], dtype=int)
     a = []
+    
     for i in range(n):
         matrix = []
         for j in range(m):
