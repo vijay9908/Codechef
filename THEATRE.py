@@ -1,5 +1,5 @@
 T = int(input())
-g_sum = 0
+g_sum = 0 
 for _ in range(T):
     n = int(input())
     q = [[0 for i in range(4)] for j in range(4)]
