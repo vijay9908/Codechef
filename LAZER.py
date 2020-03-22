@@ -1,5 +1,6 @@
-from collections import deque , defaultdict
-from sys import stdin , stdout
+from collections import deque
+from sys import stdin,stdout
+from itertools import chain
 
 class Point: 
 	def __init__(self, x, y): 
@@ -44,13 +45,6 @@ def doIntersect(p1,q1,p2,q2):
 
 	return False
 
-def ccw(A,B,C):
-    return (C.y-A.y) * (B.x-A.x) > (B.y-A.y) * (C.x-A.x)
-
-# Return true if line segments AB and CD intersect
-def intersect(A,B,C,D):
-    return ccw(A,C,D) != ccw(B,C,D) and ccw(A,B,C) != ccw(A,B,D)
-
 t = int(stdin.readline())
 for _ in range(t):
     n , q = map(int,input().split())
@@ -71,6 +65,12 @@ for _ in range(t):
                 continue
             p1 = Point(l11,l12)
             q1 = Point(l21,l22)
-            if(intersect(p1,q1,p2,q2)):
+            if(doIntersect(p1,q1,p2,q2)):
                 intersects += 1
         print(intersects)
+        
+
+        
+    
+
+
