@@ -4,35 +4,21 @@ import math , heapq
 listin = lambda: list(map(int,input().split()))
 mapin = lambda: map(int,input().split())
 
-def gamer(n):
-    status = True
-    if n%2 != 0:
-        jerrys = list(range(2,n,2))
-        for ele in jerrys:
-            if n%2 == 0 and ele%2 == 0:
-                n , ele = n//2 , ele//2
-            elif n%2 != 0 and ele%2 != 0:
-                jerrys.remove(ele)
-            elif n%2==0 and ele%2!=0:
-                jerrys.remove(ele)
-        return len(jerrys)
-    else:
-        jerrys = list(range(1,n+1,2))
-        for ele in jerrys:
-            if n%2 == 0 and ele%2 == 0:
-                n , ele = n//2 , ele//2
-            elif n%2 != 0 and ele%2 != 0:
-                jerrys.remove(ele)
-            elif n%2==0 and ele%2!=0:
-                jerrys.remove(ele)
-        return len(jerrys)
+def power2(num):
+    if (num & (num-1)) == 0:
+        return True
+    return False
 
 t = int(input())
 for _ in range(t):
     n = int(input())
-    print(gamer(n))
+    tom , jerry , power = n , 0 , 0
+    while n%2==0:
+        power += 1
+        n = n//2
+    jerry = int(math.pow(2,power+1))
+    count = 0
+    if jerry<=tom:
+        count = tom//jerry
+    print(count)
     
-
-
-    
-
