@@ -3,6 +3,9 @@ from sys import stdin , stdout
 import math , heapq
 listin = lambda: list(map(int,input().split()))
 mapin = lambda: map(int,input().split())
+from collections import deque
+from sys import stdin,stdout
+from itertools import chain
 
 t = int(input())
 for _ in range(t):
