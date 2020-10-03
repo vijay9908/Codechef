@@ -3,7 +3,7 @@ for _ in range(s):
     n , k = map(int,input().split())
     a = list(map(int,input().split()))
     b = list(map(int,input().split()))
-    mina,minb = 999 , 999
+    mina,minb = 999 , float('inf')
     for i in range(n):
         if b[i] == 1:
             mina = min(mina,a[i])
